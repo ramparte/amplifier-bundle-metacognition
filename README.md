@@ -1,8 +1,8 @@
-# Amplifier Collection: Metacognition
+# Amplifier Bundle: Metacognition
 
 **Metacognitive agents for adaptive problem-solving inspired by Poetiq's record-breaking ARC-AGI solver.**
 
-This collection provides agents that reason about *how* to solve problems, not just solve them directly. Based on research from Poetiq's SOTA ARC-AGI approach, these agents enable:
+This bundle provides agents that reason about *how* to solve problems, not just solve them directly. Based on research from Poetiq's SOTA ARC-AGI approach, these agents enable:
 
 - **Complexity assessment**: Judge if tasks are at a scale likely to succeed
 - **Iterative refinement**: Multiple attempts with measured feedback (soft scoring)
@@ -14,27 +14,21 @@ This collection provides agents that reason about *how* to solve problems, not j
 ### Installation
 
 ```bash
-# Install collection
-amplifier collection add git+https://github.com/microsoft/amplifier-collection-metacognition@main
+# Run directly from GitHub
+amplifier run --bundle git+https://github.com/ramparte/amplifier-bundle-metacognition@main "Your task"
 
-# Verify installation
-amplifier collection list
-amplifier collection show metacognition
-
-# Use the metacognitive profile
-amplifier profile use metacognitive
+# Or clone and run locally
+git clone https://github.com/ramparte/amplifier-bundle-metacognition
+amplifier run --bundle ./amplifier-bundle-metacognition/bundle.md "Your task"
 ```
 
 ### Basic Usage
 
-The metacognitive profile enables adaptive problem-solving:
+The metacognition bundle enables adaptive problem-solving:
 
 ```bash
-# Start with metacognitive profile
-amplifier profile use metacognitive
-
 # The coordinator will automatically assess complexity and adapt strategy
-amplifier run "Design and implement caching layer"
+amplifier run --bundle metacognition "Design and implement caching layer"
 
 # Behind the scenes:
 # 1. Delegates to complexity-assessor → score 7, "iterative-refinement"
@@ -42,7 +36,7 @@ amplifier run "Design and implement caching layer"
 # 3. Returns best solution with score 0.92
 ```
 
-## What This Collection Provides
+## What This Bundle Provides
 
 ### 1. Metacognitive Agents
 
@@ -79,9 +73,9 @@ Three comprehensive guides:
 - **complexity-signals.md**: How to assess task complexity
 - **scoring-rubrics.md**: Detailed rubrics for solution evaluation
 
-### 3. Metacognitive Profile
+### 3. Bundle Configuration
 
-Pre-configured profile loading all agents with optimal settings.
+Pre-configured bundle loading all agents with optimal settings. Includes `foundation:dev` for standard tools.
 
 ## How It Works
 
@@ -386,7 +380,7 @@ See [examples/code/](examples/code/) for programmatic usage:
 
 ## Philosophy
 
-This collection embodies Amplifier's core principles:
+This bundle embodies Amplifier's core principles:
 
 **Ruthless Simplicity**: Agents are markdown files, no complex orchestration code
 **Measurement Over Prediction**: Use soft scoring to track actual progress
@@ -409,7 +403,7 @@ This collection embodies Amplifier's core principles:
 
 Found a pattern that works well? Improve the scoring rubrics? Share!
 
-This collection welcomes contributions. See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+This bundle welcomes contributions. See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## License
 
@@ -424,17 +418,15 @@ Inspired by Poetiq's groundbreaking work on ARC-AGI:
 
 ## Version
 
-**Collection Version**: 0.1.0  
-**Last Updated**: 2025-01-08
+**Bundle Version**: 0.1.0  
+**Last Updated**: 2026-01-06
 
 ---
 
 **Ready to get started?**
 
 ```bash
-amplifier collection add git+https://github.com/microsoft/amplifier-collection-metacognition@main
-amplifier profile use metacognitive
-amplifier run "Your complex task here"
+amplifier run --bundle git+https://github.com/ramparte/amplifier-bundle-metacognition@main "Your complex task here"
 ```
 
 Let the agents reason about how to solve your problems!
